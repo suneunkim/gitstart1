@@ -552,12 +552,90 @@ box-sizing:border-box;
 - 색 개수 표현
 
 * 10진수 : 0 ~ 9(10개 숫자)
-* 16진수 : 0 ~ 9, A(10) ~ F(15) (16개의 숫자)
+* 16진수(Hexadecimal) : 0 ~ 9, A(10) ~ F(15) (16개의 숫자)
 
   - 3 byte : 1 byte(Red), 1 byte(Green), 1 byte(Blue)
 
 |color|Red|Green|Blue|
+|---||---||---||---|
 |byte|1 byte||1 byte||1 byte|
 |개수|256|256|256|
 |10진수|0~255||0~255||0~255|
 |16진수|00~FF||00~FF||00~FF|
+
+```
+p{
+  color:#0A35FF;
+}
+
+
+div{
+  border:1px solid rgb(200, 150, 255)
+}
+```
+
+- 투명도
+  - opacity(불투명함)
+  - transparent(투명한)
+  - alpha
+
+- opacity
+  - css 속성
+  - 0 ~ 1 소수점
+
+```
+p{
+  opacity:0.5;
+}
+```
+
+- transparent
+  - css 속성의 값
+
+```
+div{
+  background-color:transparent;
+  border:1px solid transparent;
+}
+```
+
+- alpha
+  - rgb 함수
+  - Red, Green, Bluem Alpha
+```
+div{
+  background-color:rgba(200,156,50,0.6);
+}
+```
+
+### Box 배치
+
+#### Flex
+
+- display:flex;
+  - 가로배치
+  - 배치와 관련된 여러가지 제어를 쉽게 할 수 있음
+  - 부모요소에 적용
+
+- 부모요소에 적용하는 Flex 관련 Style
+  - flex-direction
+    - 배치 방향
+    - column, column-reverse, row(default), row-reverse
+
+  - flex-wrap
+    - 배치 줄바꿈
+    - wrap, nowrap(default)
+
+  - justify-content
+    - 정렬(맞춤) : flex-start, center, flex-end
+    - 간격 : space-around, space-between
+
+  - align-items
+    - 세로 정렬 : flex-start, center, flex-end
+    - stretch(default) : 세로 길이가 부모요소에 맞춰서 채워짐
+     (* flex 적용된 박스의 가로 길이는 자식요소에 맞춰짐)
+
+## 상속(inherit)
+
+- 부모 요소에 적용된 CSS Style이 자식요소에도 적용되는 현상
+  - 대표적인 것이 font-family, color(폰트 색상). body 태그에 적용하면 기본값이 된다.
