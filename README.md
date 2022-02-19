@@ -18,10 +18,10 @@ https://darvishdarab.github.io/cs421_f20/docs/readings/restful/api/
   - 클라이언트에서 실행되는 브라우저 종류
     - 크롬, 엣지, 파이어폭스
 
--Back End
+- Back End
 
 - 서버에서 처리하는 데이터, 보안, 데이터베이스 개발
 - 서버에 저장된 B.E 소스코드는 서버에서 처리(컴파일)
 - 처리된 데이터 결과가 클라이언트로 전송
 - 서버에서 실행되는 소프트웨어
-  - apache(리눅스 OS), IIS(윈도우 OS)
+    - apache(리눅스 OS), IIS(윈도우 OS)

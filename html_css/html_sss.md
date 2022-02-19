@@ -325,3 +325,239 @@ Selector(선택자){
   - id : 100
   - class : 10
   - tag : 1
+
+
+
+## CSS Property
+
+- Contents styling
+  - Text contents
+  - Multimedia Contents
+
+- Structure Styling => layout
+
+## Text Contents Styling
+
+### Text Color
+
+- property : color
+- value : red, #1A3DFF, rgb(255,0,100)
+
+### Text Align : 텍스트 정렬
+
+- property : text-align
+- value : left, right, center, justfy
+
+### Text Decoration : 텍스트 라인
+
+- property : text-decoration
+- value : overline, line-through, underline, none
+
+### Text Indent : 텍스트 들여쓰기
+
+- property : text-indent
+- value : px 값으로 지정
+
+### Letter Spacing : 자간
+
+- property : letter-spacing
+- vaule : px 값으로 지정
+  - 양수, 음수값 모두 사용 가능
+
+### Line Height : 줄 높이
+
+- line-height
+- px값 지정, 배수값 표현 (ex:1.6)
+
+### White Space : 줄바꿈 지정
+
+- white-space
+- wrap(기본), nowrap
+
+### Font Family : 글꼴 종류
+
+- font-family
+- 고딕체(sans-serif), 명조체(serif)
+- 고딕체 : 본고딕(Noto sans), 나눔바른고딕
+- 웹폰트
+  - 로컬 : woff 폰트 형식 사용
+  - CDN 서비스 : 구글 폰트
+
+### Font Style : 기울임꼴
+
+- font-style
+- italic
+
+### Font Weight : 글꼴 굵기
+
+- font-weight
+- normal, bold
+- 100, 200, 300, 400, 500, 600, 700, 800, 900
+
+### Font Size : 글꼴 크기
+
+- font-size
+- px 단위 지정
+- 브라우저의 기본크기 : 16px
+
+### List Style
+
+- list-style-type : 목록 기호 스타일 지정
+- none: 목록 기호 삭제(1. 2. 3.) / li가 아닌 ol에 적용해야한다.
+
+
+### Table Style
+
+- border-collapse : 테이블 테두리 틈 상태 지정
+- collapse : 틈 합친 상태
+
+### Link Style
+
+- 4가지 상태 구분
+  - a:link : 기본 상태
+  - a:visited : 방문한 상태
+  - a:hover : 마우스 갖다댄 상태
+  - a:active : 마우스 버튼 누른 상태
+
+
+## Layout
+
+### Box Model
+
+- content -> width/height : 너비/높이
+- padding : 안쪽 여백
+- border : 테두리
+- margin : 바깥 여백
+- content, padding, border : 박스 영역에 포함
+
+#### content(width/height)
+
+- 박스 기본성질(block/inline)
+
+- block 요소 width/height
+  - 크기 지정 안했을 때
+    - 너비 : 부모요소 영역 너비만큼 채워짐
+    - 높이 : 자식요소 영역 높이만큼 지정됨
+- px 지정
+  - 기본 성질에 상관없이 고정 크기
+- % 지정
+  - 너비 : 부모요소 영역 기준으로 일정 비율만큼 지정
+        =>부모요소 너비가 변경되면 실시간으로 같이 변함
+  - 높이 : 기본 성질로 적용 => % 단위 적용되지 않음
+
+#### padding
+
+- 4방향 각각 독립적으로 적용(4개중 일부만 사용)
+  -padding-top
+  -padding-right
+  -padding-bottom
+  -padding-left
+
+- 축약 표현(4방향 동시적용 값을 따로 적용)
+  - 값 4개 : 각 방향 각각 적용
+  - 값 3개 : 위-아래 각각 적용, 왼쪽-오른쪽 공통 적용
+  - 값 2개 : 위-아래, 왼쪽-오른쪽 각각 공통 적용
+  - 값 1개 : 4방향 모두 공통 적용
+
+#### margin
+
+- padding과 사용방법이 같음
+
+- margin collapse
+  - 위-아래 세로 방향으로 인접해 있을 때 사이 여백이 상쇄되는 현상
+  - 위-아래 여백이 모두 적용되어 있을 때 둘 중 큰 쪽만 적용됨
+  - 위 또는 아래 박스 한쪽에만 margin 적용
+
+#### border
+
+- border: 1px(굵기) solid(종류) red(색);
+
+- border-top
+- border-right
+- border-bottom
+- border-left
+
+### box 크기 계산
+
+- content(width/height) + padding + border [+ margin]
+
+```
+Ex)
+width:300px, padding:20px(4방향), border:1px(4방향);
+=> 300 + 40 + 2 = 342 (박스 크기)
+
+전체 크기 : 400px, padding:20px(4) border:1px(4) width:?
+=> 400 - 40 - 2 = 358
+```
+위에 계산 방법. 하나의 px값 바꾸면 변경해줘야 하는 번거로움이 있다
+
+- box-sizing
+  - content-box : content 기준(기본)
+  - border-box : box 기준(박스모델에서 입력하는걸 권함. 중간에 값을 바꿔도 자동 계산)
+
+```
+Ex)
+width:300px, padding:20px(4), border:1px(4)
+box-sizing:border-box;
+=> 전체크기 : 300px (width 크기안에 보더까지 크기 잡음)
+```
+
+#### inline 요소에 box model 적용 (div -> span)
+
+- content(width/height) : 적용 안됨
+- padding : 적용됨
+- border : 적용됨
+- margin : 일부 적용 (좌우 적용)
+
+=> lnline 요소는 레이아웃 구성에 사용할 수 없음
+박스모델 적용이 안되기 때문에 레이아웃 말고 특정한 부분을 강조할 때 사용함.
+
+#### display 속성
+
+- 박스의 화면 표시 속성을 변경
+- display
+  - block
+  - inline
+  - inline-block : 박스모델 적용, 한 줄에 나란히 표시
+  - none : 공간차지 않함
+
+
+### Background
+
+- 배경
+  - 배경색
+  - 배경 이미지
+
+- background-color : 배경색
+
+- background-image : 배경 이미지
+- background-repeat : 배경 이미지 반복
+- background-position : 배경 이미지 위치
+- background-attachment : 배경 이미지 고정
+
+#### 색, 투명도
+
+- 색
+  - text color, border color, background color
+  - 색 이름(키워드)
+  - 16진수
+  - 10진수
+
+- 색 혼합 방식
+  - CMYK(감산혼합)
+    - Cyan(청록색), Magenta(자주색), Yellow, Black(Key)
+  - RGB(가산혼합)
+    - Red, Green, Blue
+
+- 색 개수 표현
+
+* 10진수 : 0 ~ 9(10개 숫자)
+* 16진수 : 0 ~ 9, A(10) ~ F(15) (16개의 숫자)
+
+  - 3 byte : 1 byte(Red), 1 byte(Green), 1 byte(Blue)
+
+|color|Red|Green|Blue|
+|byte|1 byte||1 byte||1 byte|
+|개수|256|256|256|
+|10진수|0~255||0~255||0~255|
+|16진수|00~FF||00~FF||00~FF|
