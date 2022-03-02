@@ -12,7 +12,7 @@
   - Web page의 Contents (내용 표시)
     - Text contents
     - Multimedia Contents : image, video, audio
-      - Embed(ed) Contents(html상 편집 X, 가져와서 표시만 하는 컨텐츠) 
+      - Embed(ed) Contents(html상 편집 X, 가져와서 표시만 하는 컨텐츠)
   - Web Page의 Structure (구조 설명)
 
 - 학습 내용
@@ -141,7 +141,7 @@
 
 - header : 로고, 로그인/회원가입, 언어변경
 - nav(navigation) : gnb(global navigation bar) - 상단 고정목록
-                    lnb(local navigation bar) - gnb의 하단, 사이드에 위치하는 하위 카테고리
+  lnb(local navigation bar) - gnb의 하단, 사이드에 위치하는 하위 카테고리
 - section : 웹 페이지의 본문 / 영역 구분
 - article : 웹 페이지의 본문 / 독립된 글/내용
 - aside : 부수적인 내용 / 광고 배너
@@ -152,6 +152,7 @@
 ## URL / File Path
 
 - URL(Uniform Resource Locator)
+
 ```
 https://www.naver.com/video/movie.mp4
 
@@ -168,6 +169,7 @@ Ex) 192.168.0.1 : 0~255까지의 숫자 4개로 구성
 ```
 
 - 경로 지정 방식
+
   - root : 해당 경로의 가장 시작 위치
   - 절대 지정 방식
     - 파일 경로의 전체 URL을 표현하는 방식
@@ -180,72 +182,77 @@ Ex) 192.168.0.1 : 0~255까지의 숫자 4개로 구성
 
   /(root) - html - index.html
           - images - photo.jpg
+  ```
 
 절대 방식 : https://www.abc.com/images/photo.jpg
-  * 도메인 부터 전체 주소를 표시.
+
+- 도메인 부터 전체 주소를 표시.
 
 상대 방식(현재페이지 : index.html) : ../images/photo.jpg
 
 root 상대방식 : /images/photo.jpg
-  * 내 서버에 있는 파일을 사용할 때 주로 씀 (../ => 경로 한 번 뒤로가기)
-  ```
 
-  ## HTML Head
+- 내 서버에 있는 파일을 사용할 때 주로 씀 (../ => 경로 한 번 뒤로가기)
 
-  - head element
-    - title : 웹사이트 제목(브라우저 탭에 표시)
-    - meta : 웹사이트 관련 정보(검색엔진 노출 영향)
-    - link : css 파일 불러오기
-    - style : css 코드 작성
-    - script : js 코드 작성 / 파일 불러오기 (js는 script 하나로 코드 작성/불러오기)
+```
 
-  - meta
-    - charset(character set) : 문자 세트 - 글자(문자)를 표시하는 방식
-    - 종류/개수 => 용량
-      - bit : 0/1이 저장되는 공간
-      - 1 bit가 저장/표현할 수 있는 개수(가짓수) : 2
-      - 2 * 2 * 2 * 2 => 4bit => 16개
-      - 1 byte = 8 bit => 256개(0~255) (byte < KB < MB < GB < TB < PB ...)
+## HTML Head
 
-    - UTF-8 : 글자(문자) 표기 방식 중 하나
-      - 2 byte로 글자를 표시(65536개) : 유니코드
-      - 영문은 1byte로 표현, 한글은 2byte로 표시
-      - UTF(Unicode Transformation Format - 8bit)
-    
-    - EUC-KR : 한글, 영문 전용 표시 방식
+- head element
+  - title : 웹사이트 제목(브라우저 탭에 표시)
+  - meta : 웹사이트 관련 정보(검색엔진 노출 영향)
+  - link : css 파일 불러오기
+  - style : css 코드 작성
+  - script : js 코드 작성 / 파일 불러오기 (js는 script 하나로 코드 작성/불러오기)
 
- ## HTML Block & Inline
+- meta
+  - charset(character set) : 문자 세트 - 글자(문자)를 표시하는 방식
+  - 종류/개수 => 용량
+    - bit : 0/1이 저장되는 공간
+    - 1 bit가 저장/표현할 수 있는 개수(가짓수) : 2
+    - 2 * 2 * 2 * 2 => 4bit => 16개
+    - 1 byte = 8 bit => 256개(0~255) (byte < KB < MB < GB < TB < PB ...)
 
-  - Block
-    - 줄바꿈 되어 새 줄에 표시됨
-    - 블럭요소는 너비가 가능한 전체가 채워짐
-    - Text, 블럭요소, 인라인요소, 모두 포함할 수 있음
+  - UTF-8 : 글자(문자) 표기 방식 중 하나
+    - 2 byte로 글자를 표시(65536개) : 유니코드
+    - 영문은 1byte로 표현, 한글은 2byte로 표시
+    - UTF(Unicode Transformation Format - 8bit)
 
-  - Inline
-    - 줄바꿈 되지 않고 한 줄에 표시됨
-    - 인라인 요소는 너비가 콘텐츠/자식요소에 맞춰짐
-    - Text, 인라인요소 포함할 수 있음(블럭 요소는 포함할 수 없음 - 예외 : a 태그)
+  - EUC-KR : 한글, 영문 전용 표시 방식
 
-  - div(division)
-    - 단순히 영역을 구분하거나 그룹핑을 하는 컨테이너 요소
-    - 블럭요소
+## HTML Block & Inline
 
-  - span
-    - 단순히 영역을 구분하거나 그룹핑을 하는 컨테이너 요소
-    - 인라인 요소
+- Block
+  - 줄바꿈 되어 새 줄에 표시됨
+  - 블럭요소는 너비가 가능한 전체가 채워짐
+  - Text, 블럭요소, 인라인요소, 모두 포함할 수 있음
+
+- Inline
+  - 줄바꿈 되지 않고 한 줄에 표시됨
+  - 인라인 요소는 너비가 콘텐츠/자식요소에 맞춰짐
+  - Text, 인라인요소 포함할 수 있음(블럭 요소는 포함할 수 없음 - 예외 : a 태그)
+
+- div(division)
+  - 단순히 영역을 구분하거나 그룹핑을 하는 컨테이너 요소
+  - 블럭요소
+
+- span
+  - 단순히 영역을 구분하거나 그룹핑을 하는 컨테이너 요소
+  - 인라인 요소
 
 ## HTML class, id
 
 - 해당 요소에 이름(식별자:identifier)을 지정
 
 ```
+
 <p class="클래스이름">...</p>
 <p id="아이디이름">...</p>
 <p>...</p>
 ```
 
-
 - 클래스
+
   - 하나의 웹문서내에서 동일한 이름을 사용할 수 있음
   - 하나의 요소에 여러 개의 이름을 사용할 수 있음
 
@@ -261,7 +268,7 @@ root 상대방식 : /images/photo.jpg
 <div id="title">title2</div> => (X)
 
 <div id="title import">title3</div> => (X)
-<div id="title" class="import">title3</div> 
+<div id="title" class="import">title3</div>
 ```
 
 - naming 표기법
@@ -277,7 +284,6 @@ hello-html-world : kebab case (URL-폴더, class/id 이름)
 helloHtmlWorld : camel case (js - 변수/함수 이름)
 HelloHtmlWorld : pascal case (js - class 이름)
 ```
-
 
 # CSS
 
@@ -297,6 +303,7 @@ Selector(선택자){
 ## CSS Selector
 
 - simple selector
+
   - tag
   - class
   - id
@@ -319,6 +326,7 @@ Selector(선택자){
   ```
 
 ## Cascaidng(캐스캐이딩) 규칙
+
 - 동일한 대상에 동일한 CSS Property가 여러번 적용될 때 앞에서 적용된 스타일 위에 나중에 적용된 스타일 덮어쓰기가 된다
 - 제일 나중에 적용된 스타일로 최종 반영됨
 - 우선 순위
@@ -326,11 +334,10 @@ Selector(선택자){
   - class : 10
   - tag : 1
 
-
-
 ## CSS Property
 
 - Contents styling
+
   - Text contents
   - Multimedia Contents
 
@@ -405,7 +412,6 @@ Selector(선택자){
 - list-style-type : 목록 기호 스타일 지정
 - none: 목록 기호 삭제(1. 2. 3.) / li가 아닌 ol에 적용해야한다.
 
-
 ### Table Style
 
 - border-collapse : 테이블 테두리 틈 상태 지정
@@ -418,7 +424,6 @@ Selector(선택자){
   - a:visited : 방문한 상태
   - a:hover : 마우스 갖다댄 상태
   - a:active : 마우스 버튼 누른 상태
-
 
 ## Layout
 
@@ -442,7 +447,7 @@ Selector(선택자){
   - 기본 성질에 상관없이 고정 크기
 - % 지정
   - 너비 : 부모요소 영역 기준으로 일정 비율만큼 지정
-        =>부모요소 너비가 변경되면 실시간으로 같이 변함
+    =>부모요소 너비가 변경되면 실시간으로 같이 변함
   - 높이 : 기본 성질로 적용 => % 단위 적용되지 않음
 
 #### padding
@@ -489,6 +494,7 @@ width:300px, padding:20px(4방향), border:1px(4방향);
 전체 크기 : 400px, padding:20px(4) border:1px(4) width:?
 => 400 - 40 - 2 = 358
 ```
+
 위에 계산 방법. 하나의 px값 바꾸면 변경해줘야 하는 번거로움이 있다
 
 - box-sizing
@@ -521,10 +527,10 @@ box-sizing:border-box;
   - inline-block : 박스모델 적용, 한 줄에 나란히 표시
   - none : 공간차지 않함
 
-
 ### Background
 
 - 배경
+
   - 배경색
   - 배경 이미지
 
@@ -538,12 +544,14 @@ box-sizing:border-box;
 #### 색, 투명도
 
 - 색
+
   - text color, border color, background color
   - 색 이름(키워드)
   - 16진수
   - 10진수
 
 - 색 혼합 방식
+
   - CMYK(감산혼합)
     - Cyan(청록색), Magenta(자주색), Yellow, Black(Key)
   - RGB(가산혼합)
@@ -575,6 +583,7 @@ div{
 ```
 
 - 투명도
+
   - opacity(불투명함)
   - transparent(투명한)
   - alpha
@@ -602,6 +611,7 @@ div{
 - alpha
   - rgb 함수
   - Red, Green, Bluem Alpha
+
 ```
 div{
   background-color:rgba(200,156,50,0.6);
@@ -613,29 +623,77 @@ div{
 #### Flex
 
 - display:flex;
+
   - 가로배치
   - 배치와 관련된 여러가지 제어를 쉽게 할 수 있음
   - 부모요소에 적용
 
 - 부모요소에 적용하는 Flex 관련 Style
+
   - flex-direction
+
     - 배치 방향
     - column, column-reverse, row(default), row-reverse
 
   - flex-wrap
+
     - 배치 줄바꿈
     - wrap, nowrap(default)
 
   - justify-content
+
     - 정렬(맞춤) : flex-start, center, flex-end
     - 간격 : space-around, space-between
 
   - align-items
     - 세로 정렬 : flex-start, center, flex-end
     - stretch(default) : 세로 길이가 부모요소에 맞춰서 채워짐
-     (* flex 적용된 박스의 가로 길이는 자식요소에 맞춰짐)
+      (\* flex 적용된 박스의 가로 길이는 자식요소에 맞춰짐)
 
 ## 상속(inherit)
 
 - 부모 요소에 적용된 CSS Style이 자식요소에도 적용되는 현상
   - 대표적인 것이 font-family, color(폰트 색상). body 태그에 적용하면 기본값이 된다.
+
+## 반응형 웹
+
+- 반응형 웹
+  - OSMU(One Source Multi Use)
+    - HTML이 OSMU 형태로 사용됨(Contents가 OSMU 형태로 사용됨)
+  - 여러가지 모바일 디바이스에 대응할 수 있는 디자인이 적용된 웹
+- 적응형 웹
+
+  - OSMU 형태로 사용되지 않음
+  - pc 사이트와 mobile 사이트가 분리되어 있고 디바이스 종류에 따라서 해당 사이트로 리다이렉트됨
+
+- 뷰포트
+
+  - pc 해상도를 기준으로 모바일 해상도를 PC해상도에 맞춰줌
+  - 픽셀 밀도를 같도록 맞춰줌
+
+- 픽셀 밀도
+  - 모바일 디바이스의 화면 크기가 작아서 픽셀의 크기를 작게해서 더 많은 수의
+    픽셀이 표현될 수 있도록 밀도를 높인 것
+- 구현
+
+  - 이미지, 동영상 : 모바일 디바이스 화면 해상도를 기준
+  - CSS 구현 : 텍스트 크기, 박스모델 크기값 등 PC 해상도를 기준
+
+- Break Point(변경점)
+
+  - 특정 디바이스의 스타일로 변경되는 해상도 지점
+  - 가로방향 해상도
+  - 일반 기준 해상도(세로모드 기준)
+    - 스마트 폰 : 320px ~ 360px
+    - 태블릿 : 768px ~ 900px
+    - PC : 1024px ~ 1920px ~
+  - 변경점 사이 범위를 지정
+    - s.p : <640
+    - t.b : <960(1024)
+    - p.c : open 범위
+  - 모바일 디바이스의 경우 실제 해상도가 아닌 CSS 해상도가 기준(https://www.mydevice.io/)
+
+  - 반응형 웹 구형
+    - 뷰포트 설정
+    - 변경점 범위 설정
+      - 미디어 쿼리 : @media
